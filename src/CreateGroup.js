@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import ChatProfile from './ChatProfile';
 
 function CreateGroup(props) {
-    const {email,socket, user} = props;
+    const {email,socket, user, allUsers} = props;
     const [groupName, setGroupName] = useState('');
     const [createdChatroom, setCreatedChatroom] = useState(groupName);
     const [showGroup,setShowGroup] = useState(false);
@@ -44,7 +44,7 @@ function CreateGroup(props) {
         })
     }
     return (
-        showGroup? <ChatProfile email={email} socket={socket} chatroom={createdChatroom}/> :<div className='Create-Group-Container'>
+        showGroup? <ChatProfile email={email} socket={socket} chatroom={createdChatroom} allUsers={allUsers}/> :<div className='Create-Group-Container'>
            <div className='create-group-element'>Group Name :</div> <TextField id="outlined-basic" label="Group Name" variant="outlined" className='create-group-element' onChange={(e) => handleGroupNameChange(e)}/>
             <Button variant="contained" className='create-group-element' style={{marginTop: '2rem'}} onClick={(e) => handleCreateGroupButton(e)}>Create Group</Button>
         </div>

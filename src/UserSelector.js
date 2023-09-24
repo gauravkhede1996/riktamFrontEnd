@@ -23,7 +23,9 @@ function UserSelector(props) {
     const handleUserSelectorClick = (e) => {
         console.log('clicked',chatroom);
         setChatroom(chatroom);
+        if (friendEmail) {
         setFriendEmail(friendEmail);
+        }
         navigate(`/${chatroom}`);
     }
     return (

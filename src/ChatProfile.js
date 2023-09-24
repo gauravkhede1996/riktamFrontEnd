@@ -2,15 +2,25 @@ import React, { useEffect, useState } from 'react';
 import { Icon } from '@iconify/react';
 import Button from 'react-bootstrap/Button';
 import Message from './Message';
+import { TextField } from '@mui/material';
+import UserSelector from './UserSelector';
+import User from './User';
 // import { Socket } from 'socket.io-client';
 
 function ChatProfile(props) {
-    const {email, socket, chatroom, friendEmail} = props;
+    const {email, socket, chatroom, friendEmail, allUsers} = props;
     console.log(chatroom," is the chatroom in chatProfile");
     const [newMessage,setNewMessage] = useState('');
     const [messageRecieved, setMessageRecieved] = useState(null);
     const [allOldMessage, setAllOldMessage] = useState([{message:'', messageType:''}]);
     const [kebabActive,setKebabActive] = useState(false);
+    const [searchActive, setSearchActive] = useState(false);
+    const [groupUsers, setGroupUsers] = useState([]); 
+    
+    useEffect ( () => {
+         setGroupUsers([...allUsers]);
+    },[chatroom, allUsers]);
+
     useEffect(()=> {
         socket.on('load_old_messages',async function(docs){
             setAllOldMessage([]);
@@ -87,6 +97,10 @@ function ChatProfile(props) {
             console.log(data," is the fetched data of new create group");
         })
     }
+    const handleChatHeaderNameClick = (e) => {
+        e.preventDefault();
+        setSearchActive(!searchActive);
+    }
     return (
         <div className='ChatProfile-Container'>
             <div className='UserChat-Container'>
@@ -95,7 +109,7 @@ function ChatProfile(props) {
                         <img src="https://assets.gqindia.com/photos/642691cf326f7c32f4579178/16:9/w_2560%2Cc_limit/MS-Dhoni.jpg" ></img>
                     </div>
                     <div className='Chat-Header-Name-Container'>
-                        <div className='Chat-Header-Name'> {chatroom? chatroom: 'MS DHONI'}</div>
+                        <div className='Chat-Header-Name' onClick={(e) => handleChatHeaderNameClick(e)}> {chatroom? chatroom: 'MS DHONI'}</div>
                         <div className='Chat-Header-Info'>Online</div>
                     </div>
                     <div className='Chat-Icon-Container'>
@@ -110,6 +124,7 @@ function ChatProfile(props) {
                 </div>
                 <div className='Chats-Container'>
                     {/* <Message /> */}
+                    { searchActive && (<> { groupUsers.map( (user) => <User groupName={user.name} chatroom={chatroom}  email={user.email} socket={socket} individual={true} setGroupUsers={setGroupUsers} groupUsers={groupUsers}/>)}</>)}
                     {allOldMessage.map((item) => {
                         return <Message newMessage={item.message} classType={item.messageType} messageTime={item.time}/>
                     })}

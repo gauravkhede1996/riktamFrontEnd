@@ -28,7 +28,7 @@ function MainContainer(props) {
   },[chatroom]);
 
   useEffect( () => {
-    fetch('http://127.0.0.1:8000/allGroups', {
+    fetch(`http://127.0.0.1:8000/allGroups/${email}`, {
             method:'GET',
         })
         .then(response => response.json())
@@ -53,8 +53,8 @@ function MainContainer(props) {
         <div className="Main-Container">
         <Navbar />
         <ProfileContainer email={email} allGroups={allGroups} setChatroom={setChatroom} chatroom={chatroom} socket={socket} allUsers={allUsers} setFriendEmail={setFriendEmail} friendEmail={friendEmail}/>
-        { isChatProfile && <ChatProfile email={email} socket={socket} chatroom={chatroom} friendEmail={friendEmail}/>}
-        { !isChatProfile && <CreateGroup email={email} socket={socket} user={user}/>}
+        { isChatProfile && <ChatProfile email={email} socket={socket} chatroom={chatroom} friendEmail={friendEmail} allUsers={allUsers}/>}
+        { !isChatProfile && <CreateGroup email={email} socket={socket} user={user} allUsers={allUsers}/>}
         
       </div>
     );
