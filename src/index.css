@@ -1,0 +1,317 @@
+.App{
+    justify-content: center;
+    display: flex;
+}
+/* Navbar CSS  */
+.Navbar-Container {
+    width:10%;
+    height: 80%;
+    /* border: 1px solid lightgrey; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.NavbarLogo-Container{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.NavbarIcon-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.NavbarIcon {
+    margin: 1rem 0rem;
+    color: grey;
+}
+.NavbarIcon:hover {
+    cursor: pointer;
+}
+.Main-Container {
+    width: 90vw;
+    height: 90vh;
+    border: 1px solid black;
+    display: flex;
+}
+.ChatProfile-Container {
+    width: 55%;
+    border: 1px solid grey;
+    background-color: rgb(248,248,252)  ;
+}
+/* profile css  */
+.Profile-Container{
+    width: 35%;
+    /* border: 1px solid lightcyan; */
+    height: inherit;
+    overflow-y: scroll;
+}
+.Heading-Container {
+    height:15%;
+    /* border: 1px solid lightcoral; */
+    display: flex;
+}
+.Heading {
+    color:rgb(22,82,242);
+    font-family: "Monaco";
+    width:60%;
+    /* border: 1px solid lightslategrey; */
+    padding-left: 1.5rem;
+}
+.HeadingIcon {
+    width: 40%;
+    padding-left: 1rem;
+}
+.SearchIcon {
+    margin: 1.4rem 1rem;
+    color: grey;
+}
+.SearchIcon:hover {
+    cursor: pointer;
+}
+/* Online list container  */
+.Online-List {
+    display: flex;
+    flex-direction: column;
+    /* height:10%; */
+}
+.OnlineNow-Heading{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2rem;
+    /* border: 1px solid black; */
+}
+.OnlineList-Heading-Container {
+    padding-left: 1.5rem;
+    margin-left: 1%;
+    color: grey;
+    /* border: 1px solid black; */
+}
+.See-All-Button {
+    color: grey;
+}
+.OnlineNow-People-List-Container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    /* border: 1px solid black; */
+}
+.OnlinePeople {
+    position: relative;
+    display: inline-block;
+    /* border: 1px solid black; */
+    height: 3.5rem;
+    width: 3.5rem;
+    overflow: hidden;
+}
+.OnlinePeopleDp {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.onlineTag {
+    border-radius: 50%;
+    min-height:0.7rem;
+    width:0.7rem;
+    background-color: green;
+    /* border:1px solid black;  */
+    position: absolute;
+    bottom: 0.4rem;
+    right: 0rem; 
+    z-index: 1; 
+}
+/* Pinned Section Css  */
+.PinnedMessage-Container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+}
+.PinnedMessage-Heading-Container {
+    padding-left: 1rem;
+    color: grey;
+}
+/* User Selector CSS  */
+.User-Selector {
+    margin: 1rem 0rem;
+    display: flex;
+    width:100%;
+    height: 4.5rem;
+    /* border:1px solid; */
+}
+.User-Dp-Container {
+    width: 14%;
+}
+.User-Dp-Container img {
+    padding:5px;
+    width:4rem;
+    height:4rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.User-Name-LastMessage-Container {
+    display: flex;
+    flex-direction: column;
+    width:80%;
+}
+.User-Name-Container {
+    height:40%;
+    /* border: 1px solid black; */
+    padding: 0.3rem;
+    font-weight: 600;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+.Time {
+    color: lightgrey;
+    font-weight: 100;
+    text-align: left;
+}
+.User-LastMessage-Container {
+    padding-left: 0.3rem;
+    height: 60%;
+    /* border: 1px solid gold; */
+    color: grey;
+    font-weight: 500;
+}
+/* All Message Container  */
+.All-Messages-Container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.UserChat-Header {
+    display: flex;
+    height: 15vh;
+    /* border: 1px solid black; */
+}
+
+.UserChat-Header ul {
+    list-style-type: none;
+    margin-top: 1rem;
+    color: chocolate;
+}
+.UserChat-Header ul:hover {
+    font-size: larger;
+    color: red;
+}
+.Chat-Header-Name-Container {
+    width:55%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+}
+.Chat-Header-Name {
+    height:40%;
+    /* border: 1px solid black; */
+    padding-top: 0.7rem;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+.Chat-Header-Info {
+    color: green;
+    font-weight: 500;
+}
+.Chat-Icon-Container {
+    padding-top: 1rem;
+}
+.ChatIcon {
+    margin-left: 1.5rem;
+}
+.Chats-Container {
+    height:60vh;
+    overflow: scroll;
+    /* border: 1px solid black; */
+}
+
+.Input-Container {
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+}
+.InputBox {
+    width:80%;
+    /* border: 1px solid black; */
+    margin-top: 2rem;
+    margin-left: 0.2rem;
+}
+.TextInput {
+    height:40px
+}
+.SubmitButton-Container {
+    padding:2rem;
+    box-sizing: border-box;
+}
+/* messages  */
+.Message {
+    min-height: 4rem;
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+.Message-User-Name-Container {
+    min-height: 10%;
+    min-width: 80%;
+    font-family: sans-serif;
+    font-weight: 600;
+    /* border:1px solid pink; */
+}
+.Message-User-Name-Container span {
+    color: lightgrey;
+    /* border: 1px solid black; */
+}
+.ChatMessage-Container {
+    /* height:70%; */
+    /* border-radius: 20% 20% 20% 0%; */
+    /* border: 1px solid black; */
+    font-weight: 500;
+    font-family: sans-serif;
+    background-color: white;
+    padding: 0.5rem;
+    /* border-radius: 36% 64% 37% 63% / 100% 4% 96% 0% ; */
+    border-radius: 0% 100% 18% 82% / 100% 4% 96% 0% ;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.Self-Message {
+    /* font-weight: 500; */
+    font-family: sans-serif;
+    background-color: white;
+    text-align: right;
+    padding: 0.5rem;
+    /* border-radius: 36% 64% 37% 63% / 100% 4% 96% 0% ; */
+    border-radius: 0% 100% 0% 100% / 31% 0% 100% 69% ;
+    box-shadow: rgba(136, 165, 191, 0.3) 0px 4px 2px 0px, rgba(220, 220, 220, 0.8) 0px 0px 2px 0px;
+    /* margin-bottom: 1rem; */
+}
+/* Log In CSS  */
+.Login-Form {
+    display:flex;
+    flex-direction: column;
+    gap:15px;
+    margin-top: 20px;
+    /* align-items: center; */
+    /* justify-content: center; */
+    width: 30vw;
+    /* height:25vh; */
+    border:1px solid black;
+    padding:8px;
+    margin-right: 10vw;
+}
+.Login-Signup-Container {
+    display: flex;
+    justify-content: space-between;
+}
+.Create-Group-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15%;
+    
+}
+.create-group-element {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
